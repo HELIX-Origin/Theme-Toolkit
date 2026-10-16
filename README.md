@@ -60,7 +60,7 @@ projects/Theme-Toolkit/
 
 ## 📋 Standard Commands (`main:sub:option`)
 
-In accordance with `.agents/rules/script-standards.md`, all lifecycle scripts adhere to the canonical command hierarchy:
+All lifecycle scripts adhere to the canonical `main:sub:option` command hierarchy:
 
 | Command | Action |
 |---|---|
