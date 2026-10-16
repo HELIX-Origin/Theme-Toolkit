@@ -1,0 +1,31 @@
+# Node / SvelteKit
+node_modules/
+.svelte-kit/
+build/
+dist/
+.env
+.env.*
+!.env.example
+
+# Rust / Cargo
+target/
+src-tauri/target/
+Cargo.lock
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output packages / archives
+*.deskthemepack
+*.cab
+*.soundpack
+*.tar.gz
+*.tar.xz
