@@ -1,6 +1,14 @@
 # Theme Toolkit
 
+<p align="center">
+  <a href="https://docs.helix-origin.club/theme-toolkit/"><img src="https://img.shields.io/badge/Docs-docs.helix--origin.club-brightgreen" alt="Documentation" height="20" /></a>
+  <a href="https://wiki.helix-origin.club/theme-toolkit/"><img src="https://img.shields.io/badge/Wiki-wiki.helix--origin.club-brightgreen" alt="Technical Wiki" height="20" /></a>
+  <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD--3--Clause-blue.svg" alt="License: BSD-3-Clause" height="20" /></a>
+  <a href="https://tauri.app"><img src="https://img.shields.io/badge/Tauri-v2-blue?logo=tauri" alt="Tauri v2" height="20" /></a>
+</p>
+
 > A fast, privacy-respecting cross-platform desktop theme authoring studio and applicator for **Windows**, **macOS**, and **Linux**, built with Tauri v2, Rust, and SvelteKit.
+
 
 ---
 
@@ -76,4 +84,4 @@ All lifecycle scripts adhere to the canonical `main:sub:option` command hierarch
 
 ## 📄 License
 
-BSD-3-Clause © [HELIX Origin](https://github.com/HELIX-Origin)
+BSD-3-Clause © [HELIX Origin](https://github.com/HELIX-Origin) — see [LICENSE](LICENSE) for details.
