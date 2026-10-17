@@ -1,87 +1,52 @@
+<div align="center">
+
 # Theme Toolkit
 
 <p align="center">
+  <a href="https://github.com/HELIX-Origin/theme-toolkit/releases"><img src="https://img.shields.io/github/v/release/HELIX-Origin/theme-toolkit?include_prereleases&label=Release&color=blue" alt="Release" height="20" /></a>
   <a href="https://docs.helix-origin.club/theme-toolkit/"><img src="https://img.shields.io/badge/Docs-docs.helix--origin.club-brightgreen" alt="Documentation" height="20" /></a>
   <a href="https://wiki.helix-origin.club/theme-toolkit/"><img src="https://img.shields.io/badge/Wiki-wiki.helix--origin.club-brightgreen" alt="Technical Wiki" height="20" /></a>
   <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD--3--Clause-blue.svg" alt="License: BSD-3-Clause" height="20" /></a>
   <a href="https://tauri.app"><img src="https://img.shields.io/badge/Tauri-v2-blue?logo=tauri" alt="Tauri v2" height="20" /></a>
 </p>
 
-> A fast, privacy-respecting cross-platform desktop theme authoring studio and applicator for **Windows**, **macOS**, and **Linux**, built with Tauri v2, Rust, and SvelteKit.
+**A fast, privacy-respecting cross-platform desktop theme authoring studio and applicator for Windows, macOS, and Linux — built with Tauri v2.**
 
+Create, customize, preview, and package complete visual, audio, cursor, and wallpaper themes into native, standard-compliant themepacks (`.deskthemepack`, Dynamic HEIC, FreeDesktop sound schemes) with zero remote store dependencies or telemetry.
 
----
-
-## ✨ Overview
-
-**Theme Toolkit** is a complete, dedicated desktop application designed to replace broken native theme export utilities (such as Microsoft's broken settings export integration) and provide a unified, standard-compliant theming studio.
-
-### 🔒 100% Local Studio — No Store, No Catalogue
-
-Unlike previous theming tools, **Theme Toolkit contains no remote store, online catalogue, or cloud telemetry**. It is engineered strictly for creating, modifying, previewing, and applying themes and desktop customizations directly on the user's local machine.
-
-### 📦 Export to Standard Themepacks
-
-Users can export their complete visual, audio, and cursor configurations into standard-compliant themepack archives for easy archival, backup, and one-click installation at a later time:
-- **Windows:** Packages valid `.deskthemepack` archives utilizing Microsoft `makecab.exe` Diamond Directive Files (`.ddf`) with MSZIP compression, eliminating corrupted headers and asset stripping.
-- **macOS:** Packages Dynamic Desktop timed/solar HEIC wallpapers, system `.soundpack` bundles, and retina cursor sets.
-- **Linux:** Packages FreeDesktop Sound Theme v0.8 compliant audio archives, XDG `xcursorgen` cursor binaries, and timed wallpaper XML manifests.
+</div>
 
 ---
 
-## 🚀 Feature Capabilities
+## 📖 Primary Gateways
 
-- **🎵 Sound Schemes:** Full system audio event mapping (Logon, Logoff, Alerts, Notifications, Trash, Hardware Connect) loudness-normalized to -14 LUFS.
-- **🖼️ Wallpapers & Slideshows:** Single static wallpapers or multi-monitor dynamic slideshows with configurable transition intervals, shuffle modes, and standard alignment metrics (Fill, Fit, Stretch, Tile, Center, Span).
-- **🖱️ Cursor Schemes:** Full configuration for 15 standard Win32 pointer roles (`.cur` / `.ani`), macOS retina pointers, and XDG cursor themes.
-- **🎨 Color Editing & Visual Styles:** Live DWM accent colorization control, dark/light system and app mode switches, and control panel color palettes.
-- **👁️ Live Interactive Previews:** Preview desktop wallpaper viewports, audition sound cues, playback animated cursors, and inspect theme manifests before export or application.
+All comprehensive user guides, themepack specifications, and technical architecture manuals are centrally hosted:
+
+- 📖 **Documentation**: [docs.helix-origin.club/theme-toolkit](https://docs.helix-origin.club/theme-toolkit/) — User guide, sound schemes, cursors, and themepack exporting.
+- 🧠 **Technical Wiki**: [wiki.helix-origin.club/theme-toolkit](https://wiki.helix-origin.club/theme-toolkit/) — Architecture, per-platform lib isolation, and native packaging specs.
+- 🌐 **Organization Portal**: [www.helix-origin.club](https://www.helix-origin.club/) — HELIX Origin organization hub.
 
 ---
 
-## 🛠️ Architecture
+## ⚡ Quick Start
 
-Theme Toolkit follows the HELIX-Origin Tauri v2 engineering standards:
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v20+)
+- [Rust](https://www.rust-lang.org/) (1.80+)
 
+### Running Locally
+```bash
+npm install
+npm run tauri:dev
 ```
-projects/Theme-Toolkit/
-├── src/                         <- SvelteKit / TypeScript ESM frontend studio
-├── src-tauri/
-│   ├── src/
-│   │   ├── main.rs              <- Tauri v2 entry point
-│   │   ├── lib.rs               <- Application setup & command registration
-│   │   └── platforms/           <- Per-Platform Lib Architecture
-│   │       ├── mod.rs           <- Cross-platform ThemeManifest contract
-│   │       ├── windows.rs       <- makecab.exe DDF packaging & Win32 registry
-│   │       ├── macos.rs         <- Dynamic Desktop HEIC & soundpack bundling
-│   │       └── linux.rs         <- FreeDesktop sound theme & xcursorgen
-│   ├── Cargo.toml               <- Rust dependencies
-│   ├── tauri.conf.json          <- Base Tauri configuration
-│   ├── tauri.windows.conf.json  <- Windows bundle targets (NSIS, MSI)
-│   ├── tauri.macos.conf.json    <- macOS bundle targets (DMG, App)
-│   └── tauri.linux.conf.json    <- Linux bundle targets (DEB, AppImage)
-├── scripts/                     <- Native .mjs ESM verification & test runner
-└── package.json                 <- main:sub:option command hierarchy
+
+### Verification & Quality Gate
+```bash
+npm run verify           # Full static validation gate (Rust check, tests, frontend build)
 ```
 
 ---
 
-## 📋 Standard Commands (`main:sub:option`)
+## ⚖️ License
 
-All lifecycle scripts adhere to the canonical `main:sub:option` command hierarchy:
-
-| Command | Action |
-|---|---|
-| `npm run tauri:dev` | Launch local Tauri v2 development environment |
-| `npm run tauri:build:release` | Compile production desktop application release |
-| `npm run tauri:build:debug` | Compile debug desktop application build |
-| `npm run test:rust` | Run Rust crate unit tests |
-| `npm run test:frontend` | Run SvelteKit type checks (`svelte-check`) |
-| `npm run test:all` | Run complete test verification suite |
-| `npm run verify` | Full static validation gate (Rust check, tests, frontend build) |
-
----
-
-## 📄 License
-
-BSD-3-Clause © [HELIX Origin](https://github.com/HELIX-Origin) — see [LICENSE](LICENSE) for details.
+[BSD-3-Clause](LICENSE) — Copyright (c) 2026, HELIX Origin.
