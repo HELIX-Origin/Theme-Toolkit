@@ -29,3 +29,8 @@ desktop.ini
 *.soundpack
 *.tar.gz
 *.tar.xz
+
+# Signing and Certificates (protect private keys and certificates)
+/certificates/
+*.pfx
+*.p12
